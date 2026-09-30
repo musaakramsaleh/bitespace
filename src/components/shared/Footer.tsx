@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-
+import logo from "@/assets/Vector (4).png";
+import Image from "next/image";
 const Footer = () => {
   const columns = [
     {
@@ -27,7 +28,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white pt-20 pb-14">
+    <footer className="w-full  border-t bg-white pt-20 pb-14">
       <div className="mx-auto max-w-[1200px]">
         {/* --- Top: Brand + Links --- */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_2fr] lg:gap-16">
@@ -35,15 +36,13 @@ const Footer = () => {
           <div>
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#D4FB20] text-[#040819] font-bold">
-                <span className="text-xl">b</span>
-              </div>
+              <Image src={logo} alt="main logo" />
               <span className="text-2xl font-bold tracking-tight text-[#040819]">
                 ByteSpace
               </span>
             </Link>
 
-            <p className="mt-5 max-w-[420px] text-sm leading-relaxed text-gray-500">
+            <p className="mt-5 max-w-[420px] text-sm leading-relaxed text-[#242528]">
               Stay Up to date with our latest features and releases by joining
               our newsletter.
             </p>
@@ -64,7 +63,7 @@ const Footer = () => {
             </form>
 
             {/* Disclaimer */}
-            <p className="mt-5 max-w-[420px] text-xs leading-relaxed text-gray-500">
+            <p className="mt-5 max-w-[420px] text-xs leading-relaxed text-[#242528]">
               By subscribing, you agree to our Privacy Policy and consent to
               receive updates from our company.
             </p>
@@ -78,7 +77,7 @@ const Footer = () => {
                   <li key={j}>
                     <Link
                       href="#"
-                      className="text-sm text-gray-600 transition-colors hover:text-[#003be2]"
+                      className="text-sm text-[#242528] transition-colors hover:text-[#003be2]"
                     >
                       {link}
                     </Link>
@@ -94,25 +93,25 @@ const Footer = () => {
 
         {/* --- Bottom Bar --- */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-[#242528]">
             © 2023 ByteSpace. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link
               href="#"
-              className="text-xs text-gray-500 transition-colors hover:text-[#003be2]"
+              className="text-xs text-[#242528] transition-colors hover:text-[#003be2]"
             >
               Privacy Policy
             </Link>
             <Link
               href="#"
-              className="text-xs text-gray-500 transition-colors hover:text-[#003be2]"
+              className="text-xs text-[#242528] transition-colors hover:text-[#003be2]"
             >
               Terms of Service
             </Link>
             <Link
               href="#"
-              className="text-xs text-gray-500 transition-colors hover:text-[#003be2]"
+              className="text-xs text-[#242528] transition-colors hover:text-[#003be2]"
             >
               Cookies Settings
             </Link>

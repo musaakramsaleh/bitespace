@@ -3,9 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import logo from "@/assets/Vector (4).png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +20,16 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/courses", label: "Courses" },
+    { href: "/creators", label: "Creators" },
+  ];
+
+  // Active check — exact match for "/", prefix match for others
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <nav
@@ -31,22 +45,33 @@ const Navbar = () => {
         }`}
       >
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#CCFF00] text-[#0047FF] font-bold">
-            <span className="text-xl">b</span>
-          </div>
-          <span className="text-xl font-bold tracking-tight">ByteSpace</span>
+          <Image src={logo} alt="main logo" />
+          <span className="text-2xl font-bold tracking-tight">ByteSpace</span>
         </div>
 
+        {/* Middle nav links */}
         <div className="hidden items-center gap-8 text-sm font-medium md:flex">
-          <Link href="/" className="hover:text-[#CCFF00] transition-colors">
-            Home
-          </Link>
-          <Link href="/courses" className="hover:text-[#CCFF00] transition-colors">
-            Courses
-          </Link>
-          <Link href="#" className="hover:text-[#CCFF00] transition-colors">
-            Creators
-          </Link>
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative transition-colors ${
+                  active
+                    ? "text-[#D4FB20]"
+                    : "text-[#F5F5F6] hover:text-[#CCFF00]"
+                }`}
+              >
+                {link.label}
+
+                {/* Active underline */}
+                {active && (
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-[#D4FB20]" />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-6 text-sm font-medium">
