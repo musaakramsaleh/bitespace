@@ -74,10 +74,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-6 text-base">
-          <Link href="#" className="hover:text-[#CCFF00] transition-colors">
+          <Link href="/login" className="hover:text-[#CCFF00] transition-colors">
             Sign In
           </Link>
-          <Link href="#" className="hover:text-[#CCFF00] transition-colors">
+          <Link href="/register" className="hover:text-[#CCFF00] transition-colors">
             Join Us
           </Link>
           <button className="hover:text-[#CCFF00] transition-colors">

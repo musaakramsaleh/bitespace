@@ -83,7 +83,7 @@ const Page = () => {
       </header>
 
       {/* ================= FILTER BAR ================= */}
-      <section className="mx-auto max-w-[1200px] px-4 pt-10 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1200px] px-4 pt-10 sm:px-0">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           {/* Left — filter pills */}
           <div className="flex flex-wrap items-center gap-3">

@@ -22,7 +22,7 @@ export default function NotFound() {
         {/* 404 huge number with fade */}
         <div className="relative">
           <h1
-            className="select-none text-[180px] font-bold leading-none tracking-tight text-[#D4FB20] sm:text-[240px] md:text-[300px]"
+            className="select-none text-[180px] font-bold leading-none tracking-tight text-[#D4FB20] sm:text-[240px] md:text-[480px]"
             style={{
               maskImage:
                 "linear-gradient(to bottom, black 40%, transparent 100%)",
@@ -42,7 +42,7 @@ export default function NotFound() {
         </h2>
 
         {/* Subtext */}
-        <p className="mt-6 max-w-[480px] text-xs text-blue-100 sm:text-sm">
+        <p className="mt-6 max-w-[480px] text-lg text-blue-100 sm:text-sm">
           Try to use a correct url or go back to homepage to start again
         </p>
 
