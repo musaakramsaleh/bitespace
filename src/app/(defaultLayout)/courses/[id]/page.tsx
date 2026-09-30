@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
-  BadgeCheck,
   Star,
   Play,
   BarChart3,
@@ -16,7 +15,8 @@ import {
 } from "lucide-react";
 
 import { baseCourses, sharedCourseDetail as D } from "@/constants/CourseData";
-
+import { IoMdCheckmark } from "react-icons/io";
+import camera from "@/assets/Camera.png";
 type Props = {
   params: { id: string };
 };
@@ -223,7 +223,7 @@ export default function CourseDetailPage({ params }: Props) {
       </header>
 
       {/* ================= WHITE BODY ================= */}
-      <div className="relative z-0 mx-auto max-w-[1200px] px-4 pb-16 sm:px-6 lg:px-8">
+      <div className="relative z-0 mx-auto max-w-[1200px] px-4 pb-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.7fr_1fr] lg:gap-10">
           <div className="pt-10 lg:pt-24">
             <div className="flex items-center gap-2">
@@ -231,10 +231,10 @@ export default function CourseDetailPage({ params }: Props) {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`rounded-full px-5 py-2 text-xs font-medium transition-colors sm:text-sm ${
+                  className={`rounded-full px-5 py-2 text-base font-medium transition-colors sm:text-sm ${
                     activeTab === tab.id
-                      ? "bg-[#D4FB20] text-[#040819]"
-                      : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                      ? "bg-[#D4FB20] text-[#242528]"
+                      : " bg-[#F5F5F6] text-gray-600 hover:bg-gray-50"
                   }`}
                 >
                   {tab.label}
@@ -244,15 +244,15 @@ export default function CourseDetailPage({ params }: Props) {
 
             {activeTab === "about" && (
               <div className="mt-8">
-                <h2 className="text-lg font-bold text-[#040819] sm:text-xl">
+                <h2 className="text-lg font-semibold text-[#242528] sm:text-xl">
                   Description
                 </h2>
-                <p className="mt-4 text-sm leading-relaxed text-gray-600">
+                <p className="mt-4 text-base leading-relaxed text-[#4B4C53]">
                   {longDescription}
                 </p>
 
-                <h3 className="mt-8 text-base font-bold text-[#040819]">
-                  Snook Peak
+                <h3 className="mt-8 text-xl font-medium text-[#000000]">
+                  Sneak Peak
                 </h3>
                 <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {[1, 2, 3, 4].map((n) => (
@@ -270,18 +270,18 @@ export default function CourseDetailPage({ params }: Props) {
                   ))}
                 </div>
 
-                <h3 className="mt-8 text-base font-bold text-[#040819]">
+                <h3 className="mt-8 text-xl font-medium text-[#000000]">
                   Key Points
                 </h3>
                 <ul className="mt-4 space-y-2.5">
                   {keyPoints.map((point, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-sm text-gray-600"
+                      className="flex items-center gap-2 text-base text-[#4F4F4F]"
                     >
-                      <BadgeCheck
+                      <IoMdCheckmark
                         size={16}
-                        className="mt-0.5 shrink-0 text-[#003be2]"
+                        className="mt-0.5 shrink-0  rounded-full bg-[#003BE2] text-white"
                       />
                       {point}
                     </li>
@@ -292,32 +292,32 @@ export default function CourseDetailPage({ params }: Props) {
 
             {activeTab === "lessons" && (
               <div className="mt-8">
-                <h2 className="text-lg font-bold text-[#040819] sm:text-xl">
+                <h2 className="text-xl font-semibold text-[#000000] sm:text-xl">
                   Explore the Modules
                 </h2>
-                <p className="mt-3 text-sm text-gray-600">
+                <p className="mt-5 text-base text-[#4B4C53]">
                   Immerse yourself in the course content as we break down each
                   module into comprehensive lessons, providing practical
                   insights and hands-on experience.
                 </p>
 
-                <h3 className="mt-8 text-base font-bold text-[#040819]">
+                <h2 className="text-xl mt-5 font-semibold text-[#000000] sm:text-xl">
                   Lesson List
-                </h3>
+                </h2>
                 <ul className="mt-5 space-y-3">
                   {modules.map((mod, i) => (
                     <li
                       key={i}
-                      className="flex gap-4 rounded-2xl border border-gray-100 bg-[#F9FAFB] p-4"
+                      className="flex gap-4 hover:bg-gray-100 rounded-2xl cursor-pointer p-4"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#D4FB20]">
-                        <Play size={16} className="ml-0.5 text-[#040819]" />
+                      <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-2xl bg-[#D4FB20]">
+                        <Image src={camera} alt="Camera" />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-[#040819]">
+                        <h4 className="text-base font-medium text-[#242528]">
                           {mod.title}
                         </h4>
-                        <p className="mt-1 text-xs text-gray-600 sm:text-sm">
+                        <p className="text-base text-[#4B4C53] sm:text-base">
                           {mod.desc}
                         </p>
                       </div>
@@ -326,10 +326,10 @@ export default function CourseDetailPage({ params }: Props) {
                 </ul>
 
                 <div className="mt-12">
-                  <h3 className="text-base font-bold text-[#040819]">
+                  <h2 className="text-xl mt-5 font-semibold text-[#000000] sm:text-xl">
                     Lesson Content
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                  </h2>
+                  <p className="mt-5 text-base text-[#4B4C53]">
                     Engage with a rich collection of thoughtfully curated video
                     content, detailed textual explanations, and interactive
                     quizzes. Download resources, complete assignments, and test
@@ -338,22 +338,22 @@ export default function CourseDetailPage({ params }: Props) {
                 </div>
 
                 <div className="mt-10">
-                  <h3 className="text-base font-bold text-[#040819]">
+                  <h2 className="text-xl mt-5 font-semibold text-[#000000] sm:text-xl">
                     Lesson Progress Tracking
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-600">
+                  </h2>
+                  <p className="mt-5 text-base text-[#4B4C53]">
                     We&apos;ll track your growth as you complete lessons, with
                     an intuitive progress tracking feature guiding you through
                     your learning journey.
                   </p>
-                  <div className="mt-4 rounded-2xl border border-gray-200 p-5">
-                    <span className="text-xs font-medium text-gray-500">
+                  <div className="mt-5 rounded-2xl border border-gray-200 p-5">
+                    <span className="text-sm font-medium text-[#242528]">
                       Learning Progress
                     </span>
-                    <div className="mt-2 text-3xl font-extrabold text-[#040819]">
+                    <div className="mt-2 text-[36px] font-semibold text-[#242528]">
                       55%
                     </div>
-                    <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-gray-200">
+                    <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-gray-200">
                       <div className="h-full w-[55%] rounded-full bg-[#D4FB20]" />
                     </div>
                   </div>
@@ -363,40 +363,38 @@ export default function CourseDetailPage({ params }: Props) {
 
             {activeTab === "reviews" && (
               <div className="mt-8">
-                <h2 className="text-lg font-bold text-[#040819] sm:text-xl">
+                {/* ---- Heading ---- */}
+                <h2 className="text-xl font-semibold text-[#000000] sm:text-xl">
                   What Learners Are Saying
                 </h2>
-                <p className="mt-3 text-sm text-gray-600">
+                <p className="mt-5 max-w-[560px] text-base text-[#4B4C53]">
                   Discover what our learners have to say about their experience
-                  with this course. Gain insights from reviews and ratings
-                  contributed by individuals who have embarked on the
-                  transformative journey.
+                  with &apos;Build Digital Assets: A Comprehensive Guide.&apos;
+                  Read reviews and ratings from individuals who have embarked on
+                  the transformative journey of mastering digital asset
+                  creation.
                 </p>
 
-                <div className="mt-6 flex items-stretch gap-4 rounded-2xl border border-gray-200 p-5 sm:gap-6 sm:p-6">
-                  <div className="flex shrink-0 flex-col items-center justify-center rounded-xl bg-[#D4FB20] px-5 py-3 sm:px-6">
-                    <span className="text-[10px] font-semibold text-[#040819] sm:text-xs">
-                      Total Score
+                {/* ---- Rating Summary Card ---- */}
+                <div className="mt-8 flex items-stretch gap-6 rounded-2xl border border-gray-200 bg-white p-6 sm:gap-8">
+                  {/* Left lime box */}
+                  <div className="flex w-[110px] shrink-0 flex-col items-center justify-center rounded-2xl bg-[#D4FB20] px-4 py-6 sm:w-[130px]">
+                    <span className="text-sm font-medium text-[#242528]">
+                      Ratings
                     </span>
-                    <span className="text-2xl font-extrabold text-[#040819] sm:text-3xl">
+                    <span className="mt-1 text-[42px] font-bold leading-none text-[#242528]">
                       {reviews.score}
                     </span>
                   </div>
-                  <div className="flex flex-1 flex-col justify-center space-y-1.5">
+
+                  {/* Right bars + star counts */}
+                  <div className="flex flex-1 flex-col justify-center space-y-3">
                     {reviews.breakdown.map((b) => (
-                      <div key={b.stars} className="flex items-center gap-3">
-                        <div className="flex w-12 items-center gap-0.5">
-                          {Array.from({ length: b.stars }).map((_, s) => (
-                            <Star
-                              key={s}
-                              size={10}
-                              className="fill-[#040819] text-[#040819]"
-                            />
-                          ))}
-                        </div>
-                        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-200">
+                      <div key={b.stars} className="flex items-center gap-4">
+                        {/* Progress bar */}
+                        <div className="h-2 flex-1 overflow-hidden rounded-full bg-gray-200">
                           <div
-                            className="h-full rounded-full bg-[#003be2]"
+                            className="h-full rounded-full bg-[#D4FB20]"
                             style={{
                               width: `${
                                 (b.count /
@@ -409,7 +407,20 @@ export default function CourseDetailPage({ params }: Props) {
                             }}
                           />
                         </div>
-                        <span className="w-8 text-right text-xs text-gray-500">
+
+                        {/* 5 stars */}
+                        <div className="flex shrink-0 items-center gap-0.5">
+                          {Array.from({ length: b.stars }).map((_, s) => (
+                            <Star
+                              key={s}
+                              size={14}
+                              className="fill-[#242528] text-[#242528]"
+                            />
+                          ))}
+                        </div>
+
+                        {/* Count */}
+                        <span className="w-10 shrink-0 text-right text-sm text-[#4B4C53]">
                           {b.count}
                         </span>
                       </div>
@@ -417,67 +428,75 @@ export default function CourseDetailPage({ params }: Props) {
                   </div>
                 </div>
 
-                <div className="mt-8">
-                  <h3 className="text-base font-bold text-[#040819]">
+                {/* ---- Individual Reviews ---- */}
+                <div className="mt-10">
+                  <h3 className="text-xl font-semibold text-[#000000]">
                     Individual Reviews:
                   </h3>
 
-                  <div className="mt-4 flex flex-wrap items-center gap-2">
-                    <span className="rounded-full border border-[#D4FB20] bg-[#D4FB20] px-4 py-1.5 text-xs font-semibold text-[#040819]">
-                      All Rating
+                  {/* Rating filter pills */}
+                  <div className="mt-5 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-[#D4FB20] px-5 py-2 text-sm font-medium text-[#242528]">
+                      All rating
                     </span>
                     {[5, 4, 3, 2, 1].map((s) => (
                       <button
                         key={s}
-                        className="rounded-full border border-gray-200 px-3 py-1.5 text-xs text-gray-600 hover:bg-gray-50"
+                        className="flex items-center gap-1.5 rounded-full bg-[#F5F5F6] px-4 py-2 text-sm text-[#4B4C53] transition-colors hover:bg-gray-200"
                       >
-                        ★ {s}
+                        <Star
+                          size={12}
+                          className="fill-[#4B4C53] text-[#4B4C53]"
+                        />
+                        {s}
                       </button>
                     ))}
                   </div>
 
+                  {/* Review cards */}
                   <div className="mt-6 space-y-4">
                     {reviews.individual.map((r, i) => (
                       <div
                         key={i}
-                        className="rounded-2xl border border-gray-200 p-5"
+                        className="rounded-2xl border border-gray-200 bg-white p-6"
                       >
+                        {/* Header: avatar + name + date */}
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex items-center gap-3">
-                            <div className="h-10 w-10 overflow-hidden rounded-full bg-gray-200">
+                            <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-200">
                               <Image
-                                width={40}
-                                height={40}
-                                src={`https://i.pravatar.cc/100?img=${
-                                  r.avatar + 20
-                                }`}
+                                width={48}
+                                height={48}
+                                src={`https://i.pravatar.cc/100?img=${r.avatar + 20}`}
                                 alt={r.name}
                                 className="h-full w-full object-cover"
                               />
                             </div>
                             <div>
-                              <h4 className="text-sm font-bold text-[#040819]">
+                              <h4 className="text-base font-semibold text-[#242528]">
                                 {r.name}
                               </h4>
-                              <p className="text-xs text-gray-500">{r.role}</p>
+                              <p className="text-sm text-[#4B4C53]">{r.role}</p>
                             </div>
                           </div>
-                          <span className="text-xs text-gray-400">
+                          <span className="text-sm text-[#4B4C53]">
                             {r.date}
                           </span>
                         </div>
 
-                        <div className="mt-3 flex items-center gap-0.5">
+                        {/* Stars */}
+                        <div className="mt-4 flex items-center gap-0.5">
                           {Array.from({ length: r.stars }).map((_, s) => (
                             <Star
                               key={s}
-                              size={12}
-                              className="fill-[#D4FB20] text-[#D4FB20]"
+                              size={16}
+                              className="fill-[#242528] text-[#242528]"
                             />
                           ))}
                         </div>
 
-                        <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                        {/* Review text */}
+                        <p className="mt-4 text-base leading-relaxed text-[#4B4C53]">
                           {r.text}
                         </p>
                       </div>
