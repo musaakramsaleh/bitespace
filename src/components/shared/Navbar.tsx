@@ -26,7 +26,7 @@ const Navbar = () => {
       }`}
     >
       <div
-        className={`relative z-50 flex items-center justify-between px-4 py-7 md:px-24 xl:max-w-[1440px] xl:mx-auto transition-all duration-300 ${
+        className={`relative z-50 flex items-center justify-between px-4 py-7 md:px-0 xl:max-w-[1200px] xl:mx-auto transition-all duration-300 ${
           scrolled ? "pt-5 pb-5" : "pt-10 pb-7"
         }`}
       >
@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-8 text-sm font-medium md:flex">
-          <Link href="#" className="hover:text-[#CCFF00] transition-colors">
+          <Link href="/" className="hover:text-[#CCFF00] transition-colors">
             Home
           </Link>
           <Link href="/courses" className="hover:text-[#CCFF00] transition-colors">

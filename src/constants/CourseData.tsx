@@ -7,6 +7,7 @@ import course6 from "@/assets/course-6.png";
 
 export const baseCourses = [
   {
+    id: 1,
     image: course1,
     title: "Learn Figma from Basic",
     author: "purpearl studio",
@@ -21,6 +22,7 @@ export const baseCourses = [
     extra: "20+",
   },
   {
+    id: 2,
     image: course2,
     title: "Build Digital Asset",
     author: "purpearl studio",
@@ -35,6 +37,7 @@ export const baseCourses = [
     extra: "20+",
   },
   {
+    id: 3,
     image: course3,
     title: "the Power of Big Data",
     author: "purpearl studio",
@@ -49,6 +52,7 @@ export const baseCourses = [
     extra: "20+",
   },
   {
+    id: 4,
     image: course4,
     title: "Balancing Productivity an...",
     author: "purpearl studio",
@@ -63,6 +67,7 @@ export const baseCourses = [
     extra: "20+",
   },
   {
+    id: 5,
     image: course5,
     title: "Mastering Money Manage...",
     author: "purpearl studio",
@@ -77,6 +82,7 @@ export const baseCourses = [
     extra: "20+",
   },
   {
+    id: 6,
     image: course6,
     title: "From Idea to Startup Succ...",
     author: "purpearl studio",
@@ -91,3 +97,109 @@ export const baseCourses = [
     extra: "20+",
   },
 ];
+
+// Shared detail content — SAME for every course.
+// Course-specific fields (title, author, price, image) come from baseCourses.
+export const sharedCourseDetail = {
+  subtitle:
+    "Unlock the Power of Design Collaboration with Expert Guidance on Figma",
+  lessonsCount: "17 Lessons (24 hours)",
+  enrolled: "8.4K+ enrolled",
+  instructorRole: "Professional Creator",
+  longDescription:
+    "Embark on an enlightening exploration into the world of digital design with our comprehensive course. This course is tailored to beginners and intermediate learners, providing a solid foundation in essential tools and techniques. Whether you're new to the field or looking to enhance your skills, this course is your gateway to creating stunning digital assets.",
+  keyPoints: [
+    "Foundational Concepts",
+    "Design Principles Mastery",
+    "Advanced Tools & Techniques",
+    "Real-World Application",
+    "Optimizing for Value Delivery",
+    "Digital Asset Management Best Practices",
+    "Monetization Blueprint",
+    "Ongoing Support, Building Your Portfolio",
+  ],
+  modules: [
+    {
+      title: "Module 1: Introduction to Digital Assets",
+      desc: "Lay the groundwork with a thorough understanding of digital assets, their types, and their significance in today's digital landscape.",
+    },
+    {
+      title: "Module 2: Design Principles for Impact",
+      desc: "Master the principles that drive impactful designs. Dive into the psychology of design and the strategic use of color, typography, and layout.",
+    },
+    {
+      title: "Module 3: User-Centric Design Strategies",
+      desc: "Understand the principles of user-centered design and create user experiences that resonate with your audience.",
+    },
+    {
+      title: "Module 4: Interactive Media and Engagement",
+      desc: "Engage your audience with interactive design. Explore techniques like motion graphics and interactive elements to make your designs pop.",
+    },
+    {
+      title: "Module 5: Project Showcase and Critique",
+      desc: "Present your design projects with impact. Learn the art of showcasing your work, giving and receiving constructive feedback.",
+    },
+    {
+      title: "Module 6: Optimizing Digital Assets for Various Platforms",
+      desc: "Tailor your digital assets for different platforms and optimize for search engines to maximize visibility and engagement.",
+    },
+  ],
+  sidebarLessons: [
+    { title: "Introduction to Digital Assets", time: "12 mins" },
+    { title: "Design Principles for Impact", time: "12 mins" },
+    { title: "Advanced Techniques in Digital Asset Design", time: "12 mins" },
+    { title: "Assessment and Certification", time: "12 mins" },
+  ],
+  sidebarIncludes: [
+    "Course Resources",
+    "Quality Course Videos",
+    "Certificate of Completion",
+    "Private Consultation",
+    "Mobile and TV Access",
+  ],
+  reviews: {
+    score: "4.7",
+    total: "451 Reviews",
+    breakdown: [
+      { stars: 5, count: 300 },
+      { stars: 4, count: 100 },
+      { stars: 3, count: 25 },
+      { stars: 2, count: 21 },
+      { stars: 1, count: 5 },
+    ],
+    individual: [
+      {
+        name: "PurePearl Studio",
+        role: "UI/UX Designer",
+        date: "2 years ago",
+        stars: 5,
+        text: "The course provided me with a comprehensive understanding of digital asset creation. The lessons were in-depth, practical, and immediately applicable to my work. Highly recommended!",
+        avatar: 1,
+      },
+      {
+        name: "Albert Flores",
+        role: "UI/UX Designer",
+        date: "2 years ago",
+        stars: 5,
+        text: "This course transformed my approach to digital design. The combination of theory, hands-on exercises, and real-world applications made it truly enriching. Excited to implement what I've learned.",
+        avatar: 4,
+      },
+      {
+        name: "Cody Fisher",
+        role: "UI/UX Designer",
+        date: "2 years ago",
+        stars: 5,
+        text: "The project showcase and critique module created a collaborative environment where I could showcase my work, receive valuable feedback, and refine my skills. It added a unique and valuable dimension to the learning process.",
+        avatar: 7,
+      },
+      {
+        name: "Brooklyn Simmons",
+        role: "UI/UX Designer",
+        date: "2 years ago",
+        stars: 5,
+        text: "The lessons on optimizing digital assets for various platforms were particularly insightful. The course adapts to the evolving digital landscape, and the ongoing content kept me engaged throughout.",
+        avatar: 10,
+      },
+    ],
+  },
+};
