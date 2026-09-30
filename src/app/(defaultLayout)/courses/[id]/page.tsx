@@ -104,7 +104,7 @@ export default function CourseDetailPage({ params }: Props) {
           {/* ================= Video + Sidebar grid ================= */}
           <div className="relative z-20 mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1.7fr_1fr] lg:gap-10">
             {/* Video — overlaps into white */}
-            <div className="relative aspect-video lg:h-[480px] w-full overflow-hidden rounded-2xl bg-gray-900 shadow-lg ">
+            <div className="relative aspect-video lg:h-[550px] w-full overflow-hidden rounded-2xl bg-gray-900 shadow-lg ">
               <Image
                 src={image}
                 alt={title}
