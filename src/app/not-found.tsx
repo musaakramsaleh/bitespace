@@ -1,31 +1,58 @@
+import Navbar from "@/components/shared/Navbar";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Home } from "lucide-react";
+
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12 text-center">
-      <div className="space-y-6 max-w-md">
-        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-          404 - Under Construction
-        </h1>
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#003be2] font-sans">
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0 z-0 opacity-20 pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
+          backgroundSize: "120px 120px",
+        }}
+      />
 
-        <p className="text-xl text-muted-foreground">
-          We&apos;re working on this page. Please check back later or return to
-          the homepage.
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-24 text-center sm:px-6">
+        {/* 404 huge number with fade */}
+        <div className="relative">
+          <h1
+            className="select-none text-[180px] font-bold leading-none tracking-tight text-[#D4FB20] sm:text-[240px] md:text-[300px]"
+            style={{
+              maskImage:
+                "linear-gradient(to bottom, black 40%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, black 40%, transparent 100%)",
+            }}
+          >
+            404
+          </h1>
+        </div>
+
+        {/* Heading — overlaps the faded number bottom */}
+        <h2 className="-mt-16 max-w-[900px] text-3xl font-bold leading-tight text-white sm:-mt-20 sm:text-4xl md:-mt-28 md:text-[72px]">
+          The page you are looking
+          <br />
+          for doesn&apos;t exist
+        </h2>
+
+        {/* Subtext */}
+        <p className="mt-6 max-w-[480px] text-xs text-blue-100 sm:text-sm">
+          Try to use a correct url or go back to homepage to start again
         </p>
 
-        <iframe
-          className="w-full max-w-sm mx-auto h-64 md:h-80"
-          src="https://lottie.host/embed/9a0ea178-1368-4057-a575-e8c6e921499a/FzDqBHrNXn.lottie"
-        ></iframe>
-
-        <Button asChild className="mt-8">
-          <Link href="/">
-            <Home className="mr-2 h-4 w-4" />
-            Back to Home
-          </Link>
-        </Button>
+        {/* Button */}
+        <Link
+          href="/"
+          className="mt-8 rounded-full bg-[#D4FB20] px-7 py-3 text-sm font-semibold text-[#040819] transition-transform hover:scale-105 active:scale-95"
+        >
+          Back to Home
+        </Link>
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import logo from "@/assets/Vector (4).png";
-
+import cart from "@/assets/Style=Outlined (1).png";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -44,13 +43,13 @@ const Navbar = () => {
           scrolled ? "pt-5 pb-5" : "pt-10 pb-7"
         }`}
       >
-        <div className="flex items-center gap-2">
+        <div className="flex cursor-pointer items-center gap-2">
           <Image src={logo} alt="main logo" />
           <span className="text-2xl font-bold tracking-tight">ByteSpace</span>
         </div>
 
         {/* Middle nav links */}
-        <div className="hidden items-center gap-8 text-sm font-medium md:flex">
+        <div className="hidden items-center gap-8 text-base md:flex">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
@@ -74,7 +73,7 @@ const Navbar = () => {
           })}
         </div>
 
-        <div className="flex items-center gap-6 text-sm font-medium">
+        <div className="flex items-center gap-6 text-base">
           <Link href="#" className="hover:text-[#CCFF00] transition-colors">
             Sign In
           </Link>
@@ -82,7 +81,7 @@ const Navbar = () => {
             Join Us
           </Link>
           <button className="hover:text-[#CCFF00] transition-colors">
-            <ShoppingCart size={20} />
+            <Image src={cart} alt="shopping cart" />
           </button>
         </div>
       </div>
