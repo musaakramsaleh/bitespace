@@ -29,7 +29,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full  border-t bg-white pt-20 pb-14">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-0">
+      <div className="mx-auto max-w-[1200px] px-4 lg:px-4 xl:px-0">
         {/* --- Top: Brand + Links --- */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_2fr] lg:gap-16">
           {/* Left — Brand + Newsletter */}
