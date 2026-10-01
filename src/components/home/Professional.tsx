@@ -77,16 +77,16 @@ const Professional = () => {
           {/* Right — Image with floating cards */}
           <div className="relative flex justify-center lg:justify-end">
             {/* ↓ FIX: constrain the wrapper so absolute cards scale properly on mobile */}
-            <div className="relative w-full max-w-[340px] sm:max-w-[480px] lg:max-w-none">
+            <div className="relative w-full max-w-[340px] sm:max-w-[700px] lg:max-w-none">
               {/* Green doodle */}
               <Image
                 src={greenDoodleTop}
                 alt=""
-                className="pointer-events-none absolute -right-8 top-20 z-60 w-16 sm:-right-12 sm:top-24 sm:w-24 lg:-right-16 lg:top-28 lg:w-auto"
+                className="pointer-events-none absolute -right-8 top-20 z-60 w-16 sm:-right-12 lg:w-24 md:w-auto md:-right-16 sm:top-24 sm:w-24 xl:-right-16 lg:-right-10 xl:top-28 lg:top-14 xl:w-auto"
               />
 
               {/* Floating Course Card — BEHIND the boy */}
-              <div className="absolute -left-2 top-4 z-10 w-[180px] shadow-xl sm:-left-4 sm:top-6 sm:w-[260px] lg:-left-4 lg:top-6 lg:w-auto">
+              <div className="absolute -left-2 top-4 z-10 w-[260px] shadow-xl sm:-left-4 sm:top-6 sm:w-auto lg:-left-4 lg:top-6 lg:w-auto">
                 <CourseCard
                   image={courseThumb}
                   title="Web Development Bootcamp"
@@ -114,7 +114,7 @@ const Professional = () => {
               </div>
 
               {/* Floating — Progress card */}
-              <div className="absolute -right-2 top-24 z-40 w-[140px] rounded-2xl bg-white p-3 shadow-xl sm:-right-4 sm:top-40 sm:w-[180px] sm:p-4 lg:-right-4 lg:top-32 lg:w-[238px]">
+              <div className="absolute -right-2 top-24 z-40 w-[140px] rounded-2xl bg-white p-3 shadow-xl sm:-right-4 sm:top-40 sm:w-[180px] md:w-[238px] lg:w-[180px] sm:p-4 lg:-right-4 xl:-right-4 xl:top-32 lg:top-18 xl:w-[238px]">
                 <span className="text-[10px] font-bold text-gray-600 sm:text-xs">
                   Learning Progress
                 </span>
@@ -131,7 +131,7 @@ const Professional = () => {
       </div>
 
       {/* --- Section 2: Image Left / Text Right --- */}
-      <div className="mx-auto mt-16 max-w-[1200px] px-4 sm:mt-20 sm:px-6 lg:mt-2 lg:px-8 xl:px-0">
+      <div className="mx-auto mt-16 max-w-[1200px] px-4 sm:mt-20 sm:px-6 md:mt-2 lg:mt-2 lg:px-8 xl:px-0">
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left — Image with floating cards */}
           <div className="relative order-2 flex justify-center lg:order-1 lg:justify-start">
@@ -141,7 +141,7 @@ const Professional = () => {
               <Image
                 src={greenDoodleBottom}
                 alt=""
-                className="pointer-events-none absolute right-4 top-16 z-40 w-16 sm:right-8 sm:top-20 sm:w-24 lg:right-10 lg:top-25 lg:w-auto"
+                className="pointer-events-none absolute right-4 top-16 z-40 w-16 sm:right-8 sm:top-20 sm:w-24 lg:right-10 lg:top-50 lg:w-1/3 xl:top-25 xl:w-auto"
               />
 
               {/* Floating — Revenue card */}
@@ -195,7 +195,7 @@ const Professional = () => {
                     {[1, 2, 3, 4, 5, 6, 7].map((i) => (
                       <div
                         key={i}
-                        className="h-7 w-7 overflow-hidden rounded-full border-2 border-white bg-gray-300 sm:h-9 sm:w-9 lg:h-11 lg:w-11"
+                        className=" xl:h-7 xl:w-7  overflow-hidden rounded-full border-2 border-white bg-gray-300 sm:h-9 sm:w-9 lg:h-11 lg:w-11"
                       >
                         <Image
                           width={24}
@@ -216,7 +216,7 @@ const Professional = () => {
           </div>
 
           {/* Right — Text */}
-          <div className="order-1 mt-8 text-center sm:mt-14 lg:order-2 lg:mt-22 lg:text-left">
+          <div className="order-1 mt-8 text-center sm:mt-14 lg:order-2 md:mt-2 lg:mt-22 lg:text-left">
             <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#242528] sm:text-3xl md:text-4xl lg:text-[44px]">
               Create &amp; Manage
               <br className="hidden sm:inline" />
