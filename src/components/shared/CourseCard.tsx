@@ -45,13 +45,13 @@ const CourseCard = ({
 
         {/* Stat badges overlay */}
         <div className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-[#F6F6F699]/60 px-3 py-1 text-[10px] font-medium text-[#4F4F4F] backdrop-blur-sm sm:text-xs">
+          <span className="rounded-full bg-[#F6F6F699]/60 px-3 py-1 text-[12px] font-medium text-[#4F4F4F] backdrop-blur-sm sm:text-xs">
             {lessons}
           </span>
-          <span className="rounded-full bg-[#F6F6F699]/60 px-3 py-1 text-[10px] font-medium text-[#4F4F4F] backdrop-blur-sm sm:text-xs">
+          <span className="rounded-full bg-[#F6F6F699]/60 px-3 py-1 text-[12px] font-medium text-[#4F4F4F] backdrop-blur-sm sm:text-xs">
             {duration}
           </span>
-          <span className="rounded-full bg-[#F6F6F699]/60 px-3 py-1 text-[10px] font-medium text-[#4F4F4F] backdrop-blur-sm sm:text-xs">
+          <span className="rounded-full bg-[#F6F6F699]/60 px-3 py-1 text-[12px] font-medium text-[#4F4F4F] backdrop-blur-sm sm:text-xs">
             {comments}
           </span>
         </div>

@@ -1,12 +1,6 @@
-import React from "react";
+"use client";
 
-// Course thumbnails
-import course1 from "@/assets/course-1.png";
-import course2 from "@/assets/course-2.png";
-import course3 from "@/assets/course-3.png";
-import course4 from "@/assets/course-4.png";
-import course5 from "@/assets/course-5.png";
-import course6 from "@/assets/course-6.png";
+import React, { useState } from "react";
 import design from "@/assets/about-1.png";
 import development from "@/assets/about-2.png";
 import software from "@/assets/about-3.png";
@@ -15,17 +9,22 @@ import marketing from "@/assets/about-5.png";
 import photography from "@/assets/about-6.png";
 import CourseCard from "../shared/CourseCard";
 import Image from "next/image";
+import { baseCourses } from "@/constants/CourseData";
+import Link from "next/link";
 
 const Discover = () => {
+  const [activeTop, setActiveTop] = useState("Featured");
+  const [activeBottom, setActiveBottom] = useState<string | null>(null);
+
   const topCategories = [
-    { label: "Featured", active: true },
-    { label: "Music" },
-    { label: "Drawing & Painting" },
-    { label: "Marketing" },
-    { label: "Animation" },
-    { label: "Social Media" },
-    { label: "UI/UX Design" },
-    { label: "Creative Marketing" },
+    "Featured",
+    "Music",
+    "Drawing & Painting",
+    "Marketing",
+    "Animation",
+    "Social Media",
+    "UI/UX Design",
+    "Creative Marketing",
   ];
 
   const bottomCategories = [
@@ -33,93 +32,6 @@ const Discover = () => {
     "Web Development",
     "Data Science",
     "Cooking",
-  ];
-
-  const courses = [
-    {
-      image: course1,
-      title: "Learn Figma from Basic",
-      author: "purpearl studio",
-      rating: "4.5",
-      level: "Beginner",
-      price: "$25",
-      tag: "lifetime",
-      duration: "2 hours 16 mins",
-      lessons: "17 Lessons",
-      comments: "69 Comments",
-      avatars: [1, 2, 3],
-      extra: "20+",
-    },
-    {
-      image: course2,
-      title: "Build Digital Asset",
-      author: "purpearl studio",
-      rating: "4.5",
-      level: "Beginner",
-      price: "$25",
-      tag: "lifetime",
-      duration: "2 hours 16 mins",
-      lessons: "17 Lessons",
-      comments: "69 Comments",
-      avatars: [4, 5, 6],
-      extra: "20+",
-    },
-    {
-      image: course3,
-      title: "the Power of Big Data",
-      author: "purpearl studio",
-      rating: "4.5",
-      level: "Beginner",
-      price: "$25",
-      tag: "lifetime",
-      duration: "2 hours 16 mins",
-      lessons: "17 Lessons",
-      comments: "69 Comments",
-      avatars: [7, 8, 9],
-      extra: "20+",
-    },
-    {
-      image: course4,
-      title: "Balancing Productivity an...",
-      author: "purpearl studio",
-      rating: "4.5",
-      level: "Beginner",
-      price: "$25",
-      tag: "lifetime",
-      duration: "2 hours 16 mins",
-      lessons: "17 Lessons",
-      comments: "69 Comments",
-      avatars: [10, 11, 12, 15],
-      extra: "20+",
-    },
-    {
-      image: course5,
-      title: "Mastering Money Manage...",
-      author: "purpearl studio",
-      rating: "4.5",
-      level: "Beginner",
-      price: "$25",
-      tag: "lifetime",
-      duration: "2 hours 16 mins",
-      lessons: "17 Lessons",
-      comments: "69 Comments",
-      avatars: [13, 14, 15, 16],
-      extra: "20+",
-    },
-    {
-      image: course6,
-      title: "From Idea to Startup Succ...",
-      author: "purpearl studio",
-      rating: "4.5",
-      level: "Beginner",
-      price: "$25",
-      tag: "lifetime",
-      duration: "2 hours 16 mins",
-      lessons: "17 Lessons",
-      comments: "69 Comments",
-      avatars: [16, 17, 18, 11],
-      extra: "20+",
-    },
   ];
 
   const learningPaths = [
@@ -151,26 +63,34 @@ const Discover = () => {
 
         {/* --- Category Pills --- */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          {topCategories.map((cat, i) => (
+          {topCategories.map((cat) => (
             <button
-              key={i}
+              key={cat}
+              onClick={() => setActiveTop(cat)}
               className={`rounded-full px-5 py-2 text-xs font-medium transition-colors sm:text-sm ${
-                cat.active
+                activeTop === cat
                   ? "bg-[#D4FB20] text-[#4B4C53]"
                   : "bg-[#F5F5F6] text-[#4B4C53] hover:bg-gray-200"
               }`}
             >
-              {cat.label}
+              {cat}
             </button>
           ))}
         </div>
 
         {/* --- Secondary Categories --- */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          {bottomCategories.map((cat, i) => (
+          {bottomCategories.map((cat) => (
             <button
-              key={i}
-              className="rounded-full bg-[#f5f5f6] px-5 py-2 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-200 sm:text-sm"
+              key={cat}
+              onClick={() =>
+                setActiveBottom((prev) => (prev === cat ? null : cat))
+              }
+              className={`rounded-full px-5 py-2 text-xs font-medium transition-colors sm:text-sm ${
+                activeBottom === cat
+                  ? "bg-[#D4FB20] text-[#4B4C53]"
+                  : "bg-[#f5f5f6] text-gray-700 hover:bg-gray-200"
+              }`}
             >
               {cat}
             </button>
@@ -182,8 +102,14 @@ const Discover = () => {
 
         {/* --- Course Grid --- */}
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course, i) => (
-            <CourseCard key={i} {...course} />
+          {baseCourses.map((course, i) => (
+            <Link
+              key={i}
+              href={`/courses/${course.id}`}
+              className="block transition-transform hover:-translate-y-1"
+            >
+              <CourseCard key={i} {...course} />
+            </Link>
           ))}
         </div>
       </div>

@@ -1,3 +1,10 @@
+/* @font-face {
+  font-family: "Satoshi";
+  src: url("/src/assets/fonts/Satoshi-Light.otf") format("opentype");
+  font-weight: 500;
+} */
+
+
 @import "tailwindcss";
 @plugin 'tailwindcss-animate';
 
@@ -163,3 +170,7 @@ body .skiptranslate {
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
+
+/* .secondary-text {
+  font-family: "Satoshi";
+} */
