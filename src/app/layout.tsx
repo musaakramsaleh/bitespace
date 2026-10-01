@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-import NextAuthSessionProvider from "@/lib/NextAuthSessionProvider";
-import ReduxProvider from "@/redux/ReduxProvider";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,9 +24,7 @@ export default function RootLayout({
     <html lang="en" className={poppins.variable}>
       <body className="antialiased">
         <Toaster position="bottom-right" richColors />
-        <NextAuthSessionProvider>
-          <ReduxProvider>{children}</ReduxProvider>
-        </NextAuthSessionProvider>
+          {children}
       </body>
     </html>
   );
