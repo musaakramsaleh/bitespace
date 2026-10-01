@@ -2,9 +2,21 @@
 import React from "react";
 import Image from "next/image";
 import { Star, BarChart3 } from "lucide-react";
-import { BaseCourse } from "@/types/course.types";
 
-
+type CourseCardProps = {
+  image: any;
+  title: string;
+  author: string;
+  rating: string;
+  level: string;
+  price: string;
+  tag: string;
+  duration: string;
+  lessons: string;
+  comments: string;
+  avatars: number[];
+  extra: string;
+};
 
 const CourseCard = ({
   image,
@@ -19,7 +31,7 @@ const CourseCard = ({
   comments,
   avatars,
   extra,
-}: BaseCourse) => {
+}: CourseCardProps) => {
   return (
     <article className="group overflow-hidden p-4 rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
       {/* Thumbnail */}

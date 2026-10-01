@@ -4,9 +4,8 @@ import course3 from "@/assets/course-3.png";
 import course4 from "@/assets/course-4.png";
 import course5 from "@/assets/course-5.png";
 import course6 from "@/assets/course-6.png";
-import { BaseCourse } from "@/types/course.types";
 
-export const baseCourses:BaseCourse[] = [
+export const baseCourses = [
   {
     id: 1,
     image: course1,
