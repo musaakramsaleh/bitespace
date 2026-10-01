@@ -6,7 +6,11 @@ import { baseCourses } from "@/constants/CourseData";
 
 // Creator avatar
 import creatorAvatar from "@/assets/creator-avatar.png";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Creators | ByteSpace",
+  description: "Meet the creators sharing their knowledge on ByteSpace.",
+};
 const Page = () => {
   // Duplicate base courses to fill the grid like the reference
   const courses = Array.from({ length: 2 }).flatMap(() => baseCourses);

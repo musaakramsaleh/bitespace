@@ -60,7 +60,7 @@ export default function CourseDetailClient({ course }: { course: Course }) {
         />
 
         {/* ↓ FIX: mobile-e px-4, desktop-e px-6, xl-e px-0 */}
-        <div className="relative z-10 mx-auto max-w-[1200px] px-4 pb-0 pt-24 sm:px-6 sm:pt-32 lg:px-0 lg:pt-36">
+        <div className="relative z-10 mx-auto max-w-[1200px] px-4 pb-0 pt-24 sm:px-6 sm:pt-32 lg:px-4 xl:px-0 lg:pt-36">
           {/* Top row: title + Share */}
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
             <div className="w-full sm:max-w-[750px]">

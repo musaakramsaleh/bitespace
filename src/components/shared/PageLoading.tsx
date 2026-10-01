@@ -25,7 +25,7 @@ export default function PageLoading() {
       <div className="w-64 h-64 md:w-80 md:h-80">
         <Lottie animationData={loadingAnimation} loop={true} />
       </div>
-      <p className="text-xl font-medium mt-4 text-primary min-w-[100px] text-center">
+      <p className="text-xl font-medium mt-4 text-[#003BE2] min-w-[100px] text-center">
         {loadingText}
       </p>
     </div>

@@ -42,7 +42,7 @@ const Navbar = () => {
         }`}
       >
         <div
-          className={`relative z-50 flex items-center justify-between px-4 py-7 md:px-0 xl:max-w-[1200px] xl:mx-auto transition-all duration-300 ${
+          className={`relative z-50 flex items-center justify-between px-4 py-7 md:px-5 xl:px-0 xl:max-w-[1200px] xl:mx-auto transition-all duration-300 ${
             scrolled ? "pt-5 pb-5" : "pt-10 pb-7"
           }`}
         >
