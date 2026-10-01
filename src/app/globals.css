@@ -1,4 +1,4 @@
-/* @font-face {
+/* @font-face {  
   font-family: "Satoshi";
   src: url("/src/assets/fonts/Satoshi-Light.otf") format("opentype");
   font-weight: 500;
@@ -37,15 +37,18 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
-  @media (width >= --theme(--breakpoint-sm)) {
+
+  @media (width >=--theme(--breakpoint-sm)) {
     max-width: none;
   }
-  @media (width >= 1440px) {
+
+  @media (width >=1440px) {
     max-width: 1440px;
   }
 }
 
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -74,16 +77,24 @@ button {
   border-radius: 10px;
 }
 
-/* Customize the scrollbar thumb */
+/* Customize the scrollbar thumb — BRAND BLUE */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
+  background: #003BE2;
   border-radius: 10px;
   border: 3px solid #fff;
 }
 
-/* Add hover effect for thumb */
+/* Add hover effect for thumb — BRAND BLUE */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
+  background: #003BE2;
+}
+
+/********************* Firefox scrollbar  ***********************************/
+
+/* Firefox eo same color apply korar jonno */
+* {
+  scrollbar-color: #003BE2 var(--color-foreground);
+  scrollbar-width: thin;
 }
 
 /********************* Google Translate  ************************************/
@@ -120,6 +131,7 @@ body .skiptranslate {
 .custom-pagination .ant-pagination-item-active {
   border-color: var(--color-primary) !important;
 }
+
 .custom-pagination .ant-pagination-item-active a {
   color: var(--color-primary) !important;
 }

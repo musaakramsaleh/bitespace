@@ -20,7 +20,9 @@ export default function Register() {
       <div className="max-w-[1440px] mx-auto mt-10 gap-10 px-6 lg:gap-0 lg:px-22">
         {/* ================= LOGO ================= */}
         <div className="">
-          <Image src={logo} alt="ByteSpace" width={32} height={32} />
+          <Link href="/" className="flex items-center gap-2">
+            <Image src={logo} alt="ByteSpace" width={32} height={32} />
+          </Link>
         </div>
 
         {/* ================= MAIN GRID ================= */}

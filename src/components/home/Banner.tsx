@@ -21,7 +21,7 @@ const Banner = () => {
         className="absolute inset-0 z-0 opacity-20 pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
-          backgroundSize: "80px 80px",
+          backgroundSize: "120px 120px",
         }}
       ></div>
 

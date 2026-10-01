@@ -70,7 +70,7 @@ const Page = () => {
       </header>
 
       {/* ================= Filter & Category Bar ================= */}
-      <section className="mx-auto max-w-[1200px] pt-10">
+      <section className="mx-auto md:px-0 px-4 max-w-[1200px] pt-10">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex flex-wrap items-center gap-3">
             <button className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50">
@@ -111,7 +111,7 @@ const Page = () => {
       </section>
 
       {/* ================= Course Grid ================= */}
-      <section className="mx-auto max-w-[1200px] py-10">
+      <section className="mx-auto md:px-0 px-4 max-w-[1200px] py-10">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course, i) => (
             <Link
