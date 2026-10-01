@@ -29,7 +29,7 @@ const Page = () => {
         />
 
         {/* ↓ FIX: mobile-e px-4, sm-e px-6, lg-e px-0 */}
-        <div className="relative z-10 mx-auto max-w-[1200px] px-4 pb-10 pt-24 sm:px-6 sm:pb-12 sm:pt-32 lg:px-0">
+        <div className="relative z-10 mx-auto max-w-[1200px] px-4 pb-10 pt-24 sm:px-6 sm:pb-12 sm:pt-32 lg:px-4 xl:px-0 ">
           {/* Avatar + Name + Badge */}
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
             <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-20">
@@ -93,7 +93,7 @@ const Page = () => {
 
       {/* ================= FILTER BAR ================= */}
       {/* ↓ FIX: mobile-e px-4, sm-e px-6, lg-e px-0 */}
-      <section className="mx-auto max-w-[1200px] px-4 pt-8 sm:px-6 sm:pt-10 lg:px-0">
+      <section className="mx-auto max-w-[1200px] px-4 pt-8 sm:px-6 sm:pt-10 lg:px-4 xl:px-0">
         <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
           {/* Left — filter pills */}
           {/* ↓ FIX: horizontal scroll on mobile so they fit */}
@@ -122,7 +122,7 @@ const Page = () => {
 
       {/* ================= COURSE GRID ================= */}
       {/* ↓ FIX: mobile-e px-4, sm-e px-6, lg-e px-0 */}
-      <section className="mx-auto max-w-[1200px] px-4 py-6 sm:px-6 sm:py-8 lg:px-0">
+      <section className="mx-auto max-w-[1200px] px-4 py-6 sm:px-6 sm:py-8 lg:px-4 xl:px-0">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {courses.slice(1, 7).map((course, i) => (
             <CourseCard key={i} {...course} />
